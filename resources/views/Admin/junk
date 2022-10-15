@@ -1,0 +1,45 @@
+<button class="btn btn-info text-dark" type="button" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Add to therapists table?
+  </button>
+
+  </form>
+<h1 style="color:blue;font-size:30px;"><strong>Add User to Therapist Table</strong></h1>
+
+<form action="{{URL('addtherapist',$user->id)}}" method="POST" id="editform" enctype="multipart/form-data">
+    @csrf
+ 
+    <div class="mb-3 mt-3">
+    <label hidden for="email" class="form-label">Therapist Id</label>
+    <input  hidden type="text" class="form-control w-50" id="therapist_id" value="{{$user->id}}" name="therapist_id">
+  </div>
+<div class="mb-3 mt-3">
+    <label for="email" hidden class="form-label">Name</label>
+    <input type="text" hidden class="form-control w-50" id="name" value="{{$user->name}}" name="name">
+  </div>
+
+  <div class="mb-3 mt-3">
+    <label for="phone"hidden class="form-label">Phone</label>
+    <input type="text"  hidden class="form-control w-50" id="phone" value="{{$user->phone}}"  name="phone">
+  </div>
+  <div class="mb-3 mt-3">
+    <label for="email" hidden class="form-label">Email</label>
+    <input type="text" hidden class="form-control w-50" id="email" value="{{$user->email}}"  name="email">
+  </div>
+  <div class="mb-3">
+    <label for="pwd" hidden class="form-label">Role</label>
+    <h2 style="font-size:17px;"><strong>Confirm their role</strong>
+    <select  class="form-select w-50"  name="role"  aria-label="Default select example">
+  
+ 
+  <option value="{{$user->role}}">{{$user->role}}</option>
+  
+
+ 
+</select>
+  </div>
+  <button type= "submit" style="color:blue;"class="mt-1 btn btn-primary">Send
+</button>
+
+    
+      
+</form> 

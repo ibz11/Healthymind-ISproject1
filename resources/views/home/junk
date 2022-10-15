@@ -1,0 +1,77 @@
+  <div class="col mb-5 mb-5 mb-xl-0">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
+                                <h5 class="fw-bolder">Arden Vasek</h5>
+                                <div class="fst-italic text-muted">CFO</div>
+                            </div>
+                        </div>
+
+                        <div class="col mb-5 mb-5 mb-sm-0">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
+                                <h5 class="fw-bolder">Toribio Nerthus</h5>
+                                <div class="fst-italic text-muted">Operations Manager</div>
+                            </div>
+                        </div>
+
+                        <div class="col mb-5">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
+                                <h5 class="fw-bolder">Malvina Cilla</h5>
+                                <div class="fst-italic text-muted">CTO</div>
+                            </div>
+                        </div>
+
+
+Therapists
+
+
+
+
+<section id="therapists" class="py-5">
+    <div class="container px-5 my-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-8 col-xl-6">
+                <div class="text-center">
+                    <h2 class="fw-bolder">Our Therapists</h2>
+                    <p class="lead fw-normal text-muted mb-5">Here you can see all our therapists </p>
+                <a class="btn btn-primary" href="{{URL('viewalltherapists')}}">View all our therapists</a>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5 gx-5">
+            @foreach($therapist as $therapist)
+            <div class="col-lg-4 mb-5">
+                <div class="card h-100 shadow border-0">
+                    <img class="card-img-top" class="h-75"src="/therapists/{{$therapist->image}}" alt="..." />
+                    <div class="card-body p-4">
+                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">{{$therapist->role}}</div>
+                        <a class="text-decoration-none link-dark " href=""><h5 class="card-title mb-3">Dr.{{$therapist->fname}} {{$therapist->lname}}</h5></a>
+                        <p class="card-text mb-0">{{$therapist->description}}</p>
+                    </div>
+                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                        <div class="d-flex align-items-end justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <img class="rounded-circle me-3" height="40" width="40"src="/therapists/{{$therapist->image}}" alt="..." />
+                                <div class="small">
+                                    <div class="fw-bold">Dr.{{$therapist->fname}} {{$therapist->lname}}</div>
+                                    <div class="text-muted">{{$therapist->qualification}} at {{$therapist->university}}</div>
+                                <a class="btn btn-info" href="{{URL('viewtherapist',$therapist->id)}}"> View</a>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+           
+            
+        </div>
+
+
+
+
+
+
+

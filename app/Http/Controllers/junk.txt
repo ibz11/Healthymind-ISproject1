@@ -1,0 +1,60 @@
+<!--------HomeControllleer------------>
+ /*public function addtherapist($id,Request $request){
+    $data = new Therapists;
+    //$data=User::find($id);
+    $data->therapist_id=$request->therapist_id;
+   
+    $data->phone=$request->phone;
+    $data->role=$request->role;
+    $data->email=$request->email;
+    $data->save();
+    return redirect()->back()->with('message','User added to therapist table'); 
+ }
+public function search(){
+$search=$_GET['query'];
+$data=User::paginate(1);
+$data=User::where('name','Like','%'.$search.'%')->orwhere('role','Like','%'.$search.'%')->orwhere('id','Like','%'.$search.'%')->get();
+$user=auth()->user();
+$id=$user->id;
+$count=messages::where('sender_id',$user->id)->count();
+return view('Admin.users',compact('data','count'));
+}
+
+
+
+      public function countmessage(){
+        
+      if ($user=auth()->user()){
+        $count=messages::where('sender_id',$user->id)->count(); 
+         return view('Admin.topsidenavbar',compact('count'));
+     }
+         else{
+             return view('Admin.topsidenavbar',compact('count'));
+         }
+         }
+
+         public function therapists(){
+             $data=Therapists::all();
+
+             $user=auth()->user();
+             $id=$user->id;
+             $count=messages::where('sender_id',$user->id)->count();
+             $replies=messages::where('receiver_id',$user->id)->count();
+             return view('Admin.alltherapist',compact('data','count','replies'));
+         }*/
+ }
+
+
+
+
+ <!-----AdminController----->
+ /* public function countmessage(){
+        
+        if ($user=auth()->user()){
+          $count=messages::where('sender_id',$user->id)->count(); 
+           return view('Admin.topsidenavbar',compact('count'));
+       }
+           else{
+               return view('Admin.topsidenavbar',compact('count'));
+           }
+           }*/
